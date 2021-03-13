@@ -7,15 +7,33 @@ package sch.igeek.wm.enrtity;
  */
 public class Admin {
 
+    private String name;
     private Integer id;
     private String password;
 
     public Admin() {
     }
 
-    public Admin(Integer id, String password) {
+    public Admin(String name, Integer id, String password) {
+        this.name = name;
         this.id = id;
         this.password = password;
+    }
+
+    /**
+     * 获取
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * 设置
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
@@ -51,6 +69,6 @@ public class Admin {
     }
 
     public String toString() {
-        return "Admin{id = " + id + ", password = " + password + "}";
+        return "Admin{name = " + name + ", id = " + id + ", password = " + password + "}";
     }
 }

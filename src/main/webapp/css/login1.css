@@ -1,0 +1,51 @@
+html {
+    height: 100%;
+}
+body {
+    background: url(../images/loginbacground.png);
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+#checkCodeImg:hover{
+    cursor: pointer;
+}
+
+#login-form {
+    width: 80%;
+    margin: 0 auto;
+}
+#login-form .form-group {
+    margin: 0 0 15px;
+}
+.panel-title {
+    color: #587189;
+}
+
+.img-block {
+    display: inline-block;
+}
+.login-left-img {
+    width: 100%;
+    height: 100%;
+}
+.left-block,.right-block {
+    padding: 0!important;
+}
+.tip {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+@media (min-width: 1200px) {
+    .login-row {
+        display: flex !important;
+        overflow: hidden;
+    }
+    .panel {
+        margin-bottom: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}

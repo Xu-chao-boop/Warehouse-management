@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
-@WebFilter(filterName = "EncodeFilter",urlPatterns = "/*")
+@WebFilter(filterName = "f1",urlPatterns = "/*")
 public class EncodeFilter implements Filter {
     public void destroy() {
     }

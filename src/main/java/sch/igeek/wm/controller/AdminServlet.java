@@ -2,14 +2,19 @@ package sch.igeek.wm.controller;
 
 
 import sch.igeek.wm.enrtity.Admin;
+import sch.igeek.wm.enrtity.Goods;
+import sch.igeek.wm.enrtity.User;
 import sch.igeek.wm.service.AdminService;
-import sch.igeek.wm.utils.MD5Utils;
+import sch.igeek.wm.service.UserService;
+import sch.igeek.wm.vo.PageVo;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * @Description TODO
@@ -21,32 +26,41 @@ public class AdminServlet extends BaseServlet {
 
     private AdminService service = new AdminService();
 
-    //用户登录
+    //管理员登录
     public void login(final HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer id = Integer.parseInt(request.getParameter("userID"));
+        Integer id = Integer.parseInt(request.getParameter("id"));
         String password = request.getParameter("password");
-        String checkCode = request.getParameter("checkCode");
 
-        //通过MD5技术处理登录密码
-        //password = MD5Utils.md5(password);
+        //会话属性 Servlet中的会话HttpSession由自己创建
+        HttpSession session = request.getSession();
 
-        //用户登录
+        //管理员登录
         Admin admin = service.login(id, password);
-        if (admin!=null && checkCode.equals("p15z")){
-            //登录成功
-            request.getRequestDispatcher("main.jsp").forward(request,response);
-        }else if (admin!=null && checkCode.equals("dhna")){
-            //登录成功
-            request.getRequestDispatcher("main.jsp").forward(request,response);
+        if (admin!=null){
+            //会话属性中存储了当前登录的admin信息
+            session.setAttribute("admin",admin);
 
-        }else if (admin!=null && !checkCode.equals("dhna") && !checkCode.equals("p15z")){
+            //登录成功
+            PrintWriter out = response.getWriter();
+            out.write("<script language='javascript'>alert('您的信息已经审核通过，登录成功。');" +
+                    "location.href='"+request.getContextPath()+"/user?method=viewAll';</script>");
+            //request.getRequestDispatcher("${pageContext.request.contextPath}/user?method=viewAll").forward(request,response);
+
+          }else {
             //登录失败
-            request.setAttribute("msg","校验码错误，请重新输入");
-            request.getRequestDispatcher("login.jsp").forward(request,response);
-        }else {
-            //登录失败
-            request.setAttribute("msg","用户id与密码不匹配");
-            request.getRequestDispatcher("login.jsp").forward(request,response);
+            request.setAttribute("msg","管理员id与密码不匹配");
+            request.getRequestDispatcher("adminnLogin.jsp").forward(request,response);
         }
     }
+
+
+
+    //管理员登出
+    public void exit(final HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //会话销毁
+        HttpSession session = request.getSession();
+        session.removeAttribute("admin");
+        response.sendRedirect("adminnLogin.jsp");
+    }
+
 }

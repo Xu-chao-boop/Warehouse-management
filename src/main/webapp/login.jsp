@@ -1,26 +1,29 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page isELIgnored="false" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Admin登录界面</title>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="shortcut icon" href="images/jaiobiao.png"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/login1.css">
 
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
     <script type="text/javascript" src="js/jquery.md5.js"></script>
     <script src="js/jquery.validate.min.js" type="text/javascript"></script>
-    <script src="js/validate.js" type="text/javascript"></script>
+    <script src="js/login.validate.js" type="text/javascript"></script>
 
     <style>
         label.error{
             background: url(images/unchecked.gif) no-repeat 10px 3px;
             padding-left: 30px;
             color:red;
+        }
+
+        a:hover{
+            color: #0b6cbc;
         }
     </style>
 </head>
@@ -48,7 +51,7 @@
                         </div>
                         <div class="panel-body" style="margin-bottom: 30px">
                             <!-- 表单 -->
-                            <form id="login-form" class="form-horizontal" action="${pageContext.request.contextPath}/admin?method=login" method="post">
+                            <form id="login-form" class="form-horizontal" action="${pageContext.request.contextPath}/user?method=login" method="post">
                                 <div class="form-group">
                                     <label for="userID">用户ID</label>
                                     <input type="text" class="form-control form-control-sm"
@@ -74,8 +77,9 @@
 
                                <span style="color: red">${requestScope.msg}</span>
                                 <div style="margin-top: 20px">
-                                    <button id="submit" type="submit"
-                                            class="btn btn-block btn-success form-control" style="background-color: #168be9;">登录</button>
+                                    <button id="submit" type="submit" class="btn btn-block btn-success form-control" style="background-color: #168be9;">登录</button>
+                                    <br/>
+                                    <h4 style="color: lightskyblue;margin-left: 80px;"><<&nbsp; <a id="return" href="shouye.jsp" style="color: lightskyblue">返回上一页</a>&nbsp; >></h4>
                                 </div>
                             </form>
 
