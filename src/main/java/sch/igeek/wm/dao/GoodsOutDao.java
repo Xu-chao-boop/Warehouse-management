@@ -55,4 +55,6 @@ public class GoodsOutDao extends BaseDao<GoodsOut> {
         Integer i = (Integer) this.getSingleValue(sql, id);
         return i;
     }
+
+
 }

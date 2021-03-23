@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/style.css"/>
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <link rel="stylesheet" href="font/iconfont.css" />
     <![endif]-->
     <script src="assets/js/ace-extra.min.js"></script>
     <!--[if lt IE 9]>
@@ -36,6 +37,7 @@
             padding-left: 30px;
             color:red;
         }
+
     </style>
 </head>
 
@@ -106,15 +108,14 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" class="dropdown-toggle"><i class="icon-list"></i><span class="menu-text"> 数据查询 </span><b class="arrow icon-angle-down"></b></a>
+                        <a href="#" class="dropdown-toggle"><i class="icon-list"></i><span class="menu-text"> 订单查询 </span><b class="arrow icon-angle-down"></b></a>
                         <ul class="submenu">
                             <li class="home"><a href="${pageContext.request.contextPath}/goods?method=viewEnter" title="入库订单"  class="iframeurl" target="content"><i class="icon-double-angle-right"></i>入库订单</a></li>
                             <li class="home"><a href="${pageContext.request.contextPath}/goodsOut?method=viewAll" title="出库订单"  class="iframeurl" target="content"><i class="icon-double-angle-right"></i>出库订单</a></li>
-                            <li class="home"><a href="${pageContext.request.contextPath}/supplier?method=viewAll" title="供应商信息管理"  class="iframeurl" target="content"><i class="icon-double-angle-right"></i>供应商信息管理</a></li>
-                            <li class="home"><a href="${pageContext.request.contextPath}/customer?method=viewAll" title="客户信息管理"  class="iframeurl" target="content"><i class="icon-double-angle-right"></i>客户信息管理</a></li>
-                            <li class="home"><a href="javascript:void(0)" name="cangkuxinxi.jsp" title="仓库信息展示"  class="iframeurl"><i class="icon-double-angle-right"></i>仓库信息</a></li>
-                           <%-- <li class="home"><a href="javascript:void(0)" name="(船只权限)已完结订单.html" title="(船只权限)已完结订单"  class="iframeurl"><i class="icon-double-angle-right"></i>(船只权限)已完结订单</a></li>
-                            <li class="home"><a href="javascript:void(0)" name="已加油订单.html" title="已加油订单"  class="iframeurl"><i class="icon-double-angle-right"></i>（权限）已加油订单</a></li>
+
+                            <%--<li class="home"><a href="javascript:void(0)" name="cangkuxinxi.jsp" title="仓库信息展示"  class="iframeurl"><i class="icon-double-angle-right"></i>仓库信息</a></li>
+                            <li class="home"><a href="javascript:void(0)" name="bingzhuangtu.jsp" title="仓库货物类型统计"  class="iframeurl"><i class="icon-double-angle-right"></i>货物类型统计图</a></li>--%>
+                           <%-- <li class="home"><a href="javascript:void(0)" name="已加油订单.html" title="已加油订单"  class="iframeurl"><i class="icon-double-angle-right"></i>（权限）已加油订单</a></li>
                             <li class="home"><a href="javascript:void(0)" name="已完结订单.html" title="已完结订单"  class="iframeurl"><i class="icon-double-angle-right"></i>已完结订单</a></li>
                             <li class="home"><a href="javascript:void(0)" name="异常订单.html" title="异常订单"  class="iframeurl"><i class="icon-double-angle-right"></i>异常订单</a></li>
                             <li class="home"><a href="javascript:void(0)" name="异常订单处理.html" title="异常订单处理"  class="iframeurl"><i class="icon-double-angle-right"></i>（权限）异常订单处理</a></li>
@@ -122,21 +123,49 @@
                             <li class="home"><a href="javascript:void(0)" name="订单评价.html" title="订单评价"  class="iframeurl"><i class="icon-double-angle-right"></i>（评价）订单评价</a></li>--%>
                         </ul>
                     </li>
-                    <li><a href="#" class="dropdown-toggle"><i class="icon-edit"></i><span class="menu-text"> 系统管理 </span><b class="arrow icon-angle-down"></b></a>
+                    <li>
+                        <a href="#" class="dropdown-toggle"><i>&nbsp;&nbsp;<img src="images/tongji.png"></i>&nbsp;&nbsp;&nbsp;<span class="menu-text"> 数据统计 </span><b class="arrow icon-angle-down"></b></a>
+                        <ul class="submenu">
+                           <li class="home"><a href="javascript:void(0)" name="cangkuxinxi.jsp" title="仓库信息展示"  class="iframeurl"><i class="icon-double-angle-right"></i>仓库信息</a></li>
+                            <li class="home"><a href="javascript:void(0)" name="bingzhuangtu.jsp" title="仓库货物类型统计"  class="iframeurl"><i class="icon-double-angle-right"></i>货物类型统计图</a></li>
+                                <%-- <li class="home"><a href="javascript:void(0)" name="已加油订单.html" title="已加油订单"  class="iframeurl"><i class="icon-double-angle-right"></i>（权限）已加油订单</a></li>
+                                 <li class="home"><a href="javascript:void(0)" name="已完结订单.html" title="已完结订单"  class="iframeurl"><i class="icon-double-angle-right"></i>已完结订单</a></li>
+                                 <li class="home"><a href="javascript:void(0)" name="异常订单.html" title="异常订单"  class="iframeurl"><i class="icon-double-angle-right"></i>异常订单</a></li>
+                                 <li class="home"><a href="javascript:void(0)" name="异常订单处理.html" title="异常订单处理"  class="iframeurl"><i class="icon-double-angle-right"></i>（权限）异常订单处理</a></li>
+                                 <li class="home"><a href="javascript:void(0)" name="供应商评价.html" title="供应商评价"  class="iframeurl"><i class="icon-double-angle-right"></i>供应商评价</a></li>
+                                 <li class="home"><a href="javascript:void(0)" name="订单评价.html" title="订单评价"  class="iframeurl"><i class="icon-double-angle-right"></i>（评价）订单评价</a></li>--%>
+                        </ul>
+                    </li>
+
+                     <%--   <li>
+                          <a href="#" class="dropdown-toggle"><i>&nbsp;&nbsp;<img src="images/tongji.png"></i>&nbsp;&nbsp;&nbsp;<span class="menu-text"> 关于更多 </span><b class="arrow icon-angle-down"></b></a>
+                          <ul class="submenu">
+                              <li class="home"><a href="javascript:void(0)" name="about_us.jsp" title="关于我们" class="iframeurl"><i class="icon-double-angle-right"></i>关于我们</a></li>
+
+                          </ul>
+                      </li>--%>
+
+                    <li><a href="#" class="dropdown-toggle"><i class="icon-edit"></i><span class="menu-text"> 信息管理 </span><b class="arrow icon-angle-down"></b></a>
                         <ul class="submenu">
                            <%-- <li class="home"><a href="javascript:void(0)" name="菜单管理.html" title="菜单管理" class="iframeurl"><i class="icon-double-angle-right"></i>菜单管理</a></li>
                             <li class="home"><a href="javascript:void(0)" name="角色管理.html" title="角色管理"  class="iframeurl"><i class="icon-double-angle-right"></i>角色管理</a></li>--%>
-                            <li class="home"><a href="javascript:void(0)" name="xiugaiUser.jsp" title="用户信息管理" class="iframeurl"><i class="icon-double-angle-right"></i>用户管理</a></li>
-                            <!--根据用户权限显示用户管理-->
-                            <li class="home"><a href="javascript:void(0)" name="adminnLogin.jsp" title="权限用户管理" class="iframeurl" target="content"><i class="icon-double-angle-right"></i>管理员权限管理</a></li>
-                            <!--结束-->
-                            <li class="home"><a href="javascript:void(0)" name="about_us.jsp" title="关于我们" class="iframeurl"><i class="icon-double-angle-right"></i>关于我们</a></li>
-                           <%-- <li class="home"><a href="javascript:void(0)" name="供应商管理.html" title="供应商管理" class="iframeurl"><i class="icon-double-angle-right"></i>供应商管理</a></li>
+                            <li class="home"><a href="javascript:void(0)" name="xiugaiUser.jsp" title="个人信息管理" class="iframeurl"><i class="icon-double-angle-right"></i>个人信息管理</a></li>
+
+                          <!--根据用户权限显示用户管理-->
+                          <li class="home"><a href="javascript:void(0)" name="adminnLogin.jsp" title="权限用户管理" class="iframeurl" target="content"><i class="icon-double-angle-right"></i>管理员权限管理</a></li>
+                               <li class="home"><a href="${pageContext.request.contextPath}/supplier?method=viewAll" title="供应商信息管理"  class="iframeurl" target="content"><i class="icon-double-angle-right"></i>供应商信息管理</a></li>
+                               <li class="home"><a href="${pageContext.request.contextPath}/customer?method=viewAll" title="客户信息管理"  class="iframeurl" target="content"><i class="icon-double-angle-right"></i>客户信息管理</a></li>
+                               <li class="home"><a href="javascript:void(0)" name="about_us.jsp" title="关于我们" class="iframeurl"><i class="icon-double-angle-right"></i>关于我们</a></li>
+                               <!--结束-->
+
+                           <%-- <li class="home"><a href="javascript:void(0)" name="bingzhuangtu.jsp" title="供应商管理" class="iframeurl"><i class="icon-double-angle-right"></i>供应商管理</a></li>
                             <li class="home"><a href="javascript:void(0)" name="船只管理.html" title="船只管理" class="iframeurl"><i class="icon-double-angle-right"></i>船只管理</a></li>
                             <li class="home"><a href="javascript:void(0)" name="产品管理.html" title="产品管理" class="iframeurl"><i class="icon-double-angle-right"></i>产品管理</a></li>
                         </ul>--%>
                     </li>
                 </ul><!-- /.nav-list -->
+
+
             </c:if>
 
             <div class="sidebar-collapse" id="sidebar-collapse">

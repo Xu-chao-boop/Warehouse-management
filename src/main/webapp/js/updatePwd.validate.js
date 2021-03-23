@@ -35,21 +35,6 @@ $(function () {
 
         },
 
-        /**
-         * errorPlacement  指定错误信息出现的位置
-         * 第一个参数error： 错误信息
-         * 第二个参数element：产生错误的标签元素
-         */
-      /*  errorPlacement: function (error, element) {
-            //如果是radio或checkbox
-            if (element.is(':radio') || element.is(':checkbox')) {
-                //将错误信息添加到当前元素的祖父节点后面
-                error.appendTo(element.parent().parent());
-            } else {
-                //将错误信息直接插入到当前元素的后面
-                error.insertAfter(element);
-            }
-        }*/
     });
 });
 

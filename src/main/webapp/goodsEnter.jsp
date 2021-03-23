@@ -38,13 +38,31 @@
                                <%--onchange="validateName('${path}')"--%> value="${goods.name}" style=" width:350px; "/><br/>
                     </li>
                     <li>
-                        <label class="label_name">货物类型</label>
-                        <input name="type" type="text" placeholder="请输入货物类型" class="text" value="${goods.type}" style=" width:350px; "/>
+                    <label class="label_name">货物类型</label><select name="type" size="1" style="width:350px; margin-left:10px" >
+                        <option value="">--请选择货物类型--</option>
+                        <option value="原材料类">原材料类</option>
+                        <option value="电子配件类">电子配件类</option>
+                        <option value="五金类">五金类</option>
+                        <option value="食品类">食品类</option>
+                        <option value="化工类">化工类</option>
+                        <option value="家居类">家居类</option>
+                        <option value="日用品">日用品类</option>
+                        <option value="服饰类">服饰类</option>
+                    </select>
                     </li>
                     <li>
-                        <label class="label_name">货物规格</label>
-                        <input name="specification" type="text" placeholder="请输入货物规格"
-                               value="${goods.number}" class="text" style=" width:350px; "/>
+                        <label class="label_name">包装规格</label><select name="specification" size="1" style="width:350px; margin-left:10px" >
+                        <option value="">--请选择包装规格--</option>
+                        <option value="纸壳包装">纸壳包装</option>
+                        <option value="金属包装">金属包装</option>
+                        <option value="木制包装">木制包装</option>
+                        <option value="塑料包装">塑料包装</option>
+                        <option value="普通袋装">普通袋装</option>
+                        <option value="集装箱包装">集装箱包装</option>
+                        <option value="单件运输包装">单件运输包装</option>
+                        <option value="集合运输包装">集合运输包装</option>
+                        <option value="玻璃制品包装">玻璃制品包装</option>
+                    </select>
                     </li>
                     <li><label class="label_name">入库仓库</label><select name="warehouse" size="1" style="width:350px; margin-left:10px" >
                         <option value="">--请选择第几号仓库--</option>
@@ -73,7 +91,6 @@
                     </li>
                 </ul>
             </div>
-            <br/>
             <div class="btn_operating"><button type="submit" class="btn btn-info" id="submit" >提交入库</button></div>
         </form>
  </div>

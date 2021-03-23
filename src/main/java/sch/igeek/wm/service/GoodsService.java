@@ -222,6 +222,7 @@ public class GoodsService {
         return false;
     }
 
+    //根据id删除货物
     public void deleteById(Integer id) {
         try {
             goodsDao.delete(id);
@@ -229,4 +230,39 @@ public class GoodsService {
             e.printStackTrace();
         }
     }
+
+    //查询货物库存内所有已有的货物的ID
+    public List<Goods> selectAllId(){
+        try {
+            List<Goods> idList = goodsDao.selectAllId();
+            return idList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    //根据货物id查询货物名称
+    public String selectNameById(Integer id) {
+        try {
+            String name = goodsDao.selectNameById(id);
+            return name;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+
+    }
+
+    //根据货物id查询货物数量
+    public Integer selectNumById(Integer id) {
+        try {
+            Integer number = goodsDao.selectNumById(id);
+            return number;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

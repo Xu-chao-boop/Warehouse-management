@@ -135,6 +135,26 @@ public class GoodsDao extends BaseDao<Goods> {
         int i = this.update(sql,num,id);
         return i;
     }
+    //查询货物库存内所有已有的货物的ID
+    public List<Goods> selectAllId() throws SQLException {
+        String sql = "select id from goods";
+        List<Goods> idList = this.getBeanList(sql, Goods.class);
+        return idList;
+    }
 
+    //根据货物id查询货物名称
+    public String selectNameById(Integer id) throws SQLException {
+        String sql = "select name from goods where id = ?";
+        String name = (String)this.getSingleValue(sql, id);
+        return name;
+
+    }
+
+    //根据货物id查询货物数量
+    public Integer selectNumById(Integer id) throws SQLException {
+        String sql = "select number from goods where id = ?";
+        Integer number = (Integer)this.getSingleValue(sql, id);
+        return number;
+    }
 
 }

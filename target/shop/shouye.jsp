@@ -18,7 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="csss/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="csss/swiper-3.4.2.min.css">
 	<link rel="stylesheet" type="text/css" href="csss/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="csss/public.css">
+	<link rel="stylesheet" type="text/css" href="csss/publiccc.css">
 	<link rel="stylesheet" type="text/css" href="csss/iconfont.css">
 	<style>
 		.product .box4 .logo-box div{
@@ -45,15 +45,15 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<a class="may" href="shouye.jsp">首页</a>
+							<a class="may" href="shouye.jsp" <%--onclick="window.location.reload()"--%>>首页</a>
 						</li>
 
 						<li class="solution">
 							<a class="dropdown-toggle may" data-toggle="dropdown" href="/company.html">关于科箭</a>
 							<ul class="dropdown-menu">
-								<li><a class="may" href="/company.html">公司介绍</a></li>
-								<li><a class="may" href="/contact.html">联系我们</a></li>
-								<li><a class="may" href="/article/category/news.html">新闻资讯</a></li>
+								<li><a class="may" href="gongsijieshao.jsp">公司介绍</a></li>
+								<li><a class="may" href="lianxiwomen.jsp">联系我们</a></li>
+								<li><a class="may" href="news.jsp">新闻资讯</a></li>
 							</ul>
 						</li>
 						<li class="solution">
@@ -131,42 +131,42 @@
 				<ul>
 					<li class="col-lg-4 col-md-4 col-sm-6 col-xs-6 text-center">
 						<svg class="icon" aria-hidden="true">
-							<use xlink:href="#icon-rukuguanli"></use>
+							<i style="margin-left: -40px"><img src="images/入库管理.JPG"></i>
 						</svg>
 						<div class="h4">入库管理</div>
 						<p>支持多种收货方式，通过自定义规则和策略，智能上架</p>
 					</li>
 					<li class="col-lg-4 col-md-4 col-sm-6 col-xs-6 text-center">
 						<svg class="icon" aria-hidden="true">
-							<use xlink:href="#icon-kucunguanli"></use>
+							<i style="margin-left: -40px"><img src="images/库存管理.JPG"></i>
 						</svg>
 						<div class="h4">库存管理</div>
 						<p>提供库位化管理，实现库存可视化。支持库位移动、数量调整</p>
 					</li>
 					<li class="col-lg-4 col-md-4 col-sm-6 col-xs-6 text-center">
 						<svg class="icon" aria-hidden="true">
-							<use xlink:href="#icon-chukuguanli"></use>
+							<i style="margin-left: -40px"><img src="images/出库管理.JPG"></i>
 						</svg>
 						<div class="h4">出库管理</div>
 						<p>支持多种拣货策略，实现最短拣货路径</p>
 					</li>
 					<li class="col-lg-4 col-md-4 col-sm-6 col-xs-6 text-center">
 						<svg class="icon" aria-hidden="true">
-							<use xlink:href="#icon-zengzhifuwu"></use>
+							<i style="margin-left: -40px"><img src="images/增值服务.JPG"></i>
 						</svg>
 						<div class="h4">增值服务</div>
 						<p>系统支持贴标、清关、换 包装、Kitting组装和拆装等增值服务</p>
 					</li>
 					<li class="col-lg-4 col-md-4 col-sm-6 col-xs-6 text-center">
 						<svg class="icon" aria-hidden="true">
-							<use xlink:href="#icon-renliguanli"></use>
+							<i style="margin-left: -40px"><img src="images/人员.JPG"></i>
 						</svg>
 						<div class="h4">人力管理</div>
 						<p>系统内置任务分配规则，并提供整体订单执行状况与绩效统计报告</p>
 					</li>
 					<li class="col-lg-4 col-md-4 col-sm-6 col-xs-6 text-center">
 						<svg class="icon" aria-hidden="true">
-							<use xlink:href="#icon-tiaomaguanli"></use>
+							<i style="margin-left: -40px"><img src="images/条码管理.JPG"></i>
 						</svg>
 						<div class="h4">条码管理</div>
 						<p>全程条码管理，利用无线手持实现无纸化、自动化作业</p>

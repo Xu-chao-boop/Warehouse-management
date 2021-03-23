@@ -15,7 +15,7 @@ public class RespWriterUtil {
      * @param resp
      * @param rs
      */
-    public static void writer(HttpServletResponse resp, Results rs){
+    public static void writer(HttpServletResponse resp, Result rs){
         //设置编码
         resp.setContentType("text/json;charset = utf-8");
         PrintWriter writer = null;

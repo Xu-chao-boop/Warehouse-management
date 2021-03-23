@@ -26,7 +26,7 @@
   <div class="add_user_style clearfix">
    <div class="xinxi-xs clearfix">
    <label class="label_name lf">用户名称：</label><span class="lf">${sessionScope.user.name}</span>
-   <label class="label_name lf">备注：</label ><span class="lf">您无权限操作用户ID</span>
+   <label class="label_name lf">备注：</label ><span class="lf">用户ID无权限操作</span>
    </div>
    <ul>
     <li hidden="hidden">

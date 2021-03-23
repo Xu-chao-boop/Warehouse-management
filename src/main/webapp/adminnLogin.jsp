@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,9 +18,16 @@
  <div class=" Manager_style">
   <span class="title_name">管理员权限管理</span>
   <div class="add_user_style clearfix">
+
    <div class="xinxi-xs clearfix">
-   <label class="label_name lf">界面说明：</label><span class="lf">管理员操作</span>
-   <label class="label_name lf">备注：</label ><span class="lf">仅管理员账号可登录</span>
+   <label class="label_name lf">界面说明：</label><span class="lf">登录后进行对用户信息管理</span>
+   <label class="label_name lf">备注：</label >
+<c:if test="${sessionScope.user.id==2001}">
+  <span class="lf" style="color: #0FB25F">您是管理员，可进行此操作</span>
+</c:if>
+<c:if test="${sessionScope.user.id!=2001}">
+    <span class="lf" style="color: red">您不是管理员，无权限进行此操作</span>
+</c:if>
    </div>
    <br/>
    <ul>

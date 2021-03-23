@@ -6,6 +6,8 @@ import sch.igeek.wm.enrtity.GoodsOut;
 import sch.igeek.wm.service.GoodsOutService;
 import sch.igeek.wm.service.GoodsService;
 import sch.igeek.wm.vo.PageVo;
+import sch.igeek.wm.vo.RespWriterUtil;
+import sch.igeek.wm.vo.Result;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,6 +18,7 @@ import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 
 @WebServlet(name = "GoodsOutServlet",urlPatterns = "/goodsOut")
@@ -147,7 +150,37 @@ public class GoodsOutServlet extends BaseServlet {
         response.getWriter().write(str);
     }
 
+    //查询货物库存内所有已有的货物的ID
+    public void selectAllId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Goods> idList = goodsService.selectAllId();
 
+        Result result = new Result(idList);
+        RespWriterUtil.writer(response,result);
+
+    }
+
+    //根据货物id查询货物名称
+    public void selectNameById(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Integer id= Integer.parseInt(request.getParameter("id"));
+        String name = goodsService.selectNameById(id);
+        System.out.println(name);
+
+        Result result = new Result(name);
+        RespWriterUtil.writer(response,result);
+
+    }
+
+    //根据货物id查询货物数量
+    public void selectNumById(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Integer id= Integer.parseInt(request.getParameter("id"));
+        System.out.println(id);
+        Integer number = goodsService.selectNumById(id);
+        System.out.println(number);
+
+        Result result = new Result(number);
+        RespWriterUtil.writer(response,result);
+
+    }
 
 
 }

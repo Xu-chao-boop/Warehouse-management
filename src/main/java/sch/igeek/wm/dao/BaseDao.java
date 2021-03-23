@@ -35,7 +35,6 @@ public class BaseDao<T> {
 
     }
 
-
     //查询单个对象
     public T getBean(String sql , Class<T> clazz , Object...params) throws SQLException {
         return runner.query(DataSourceUtils.getConnection(),sql,new BeanHandler<>(clazz),params);

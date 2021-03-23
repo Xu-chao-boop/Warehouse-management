@@ -64,37 +64,39 @@ public class UserServlet extends BaseServlet {
     public void login(final HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer id = Integer.parseInt(request.getParameter("userID"));
         String password = request.getParameter("password");
-        String checkCode = request.getParameter("checkCode");
 
         //会话属性 Servlet中的会话HttpSession由自己创建
         HttpSession session = request.getSession();
 
         //通过MD5技术处理登录密码
         //password = MD5Utils.md5(password);
+        //验证码
+        String piccode = (String) request.getSession().getAttribute("piccode");
+        String checkCode = request.getParameter("checkCode");  //取值
+        checkCode = checkCode.toUpperCase();  //把字符全部转换为大写的（此语句可以用于验证码不区分大小写）
+        response.setContentType("textml;charset=gbk");//解决乱码问题
+        PrintWriter out = response.getWriter();
 
-        //用户登录
-        User user = service.login(id, password);
-        if (user!=null && checkCode.equals("p15z")){
-            //会话属性中存储了当前登录的admin信息
-            session.setAttribute("user",user);
 
-            //登录成功
-            request.getRequestDispatcher("main.jsp").forward(request,response);
+        if (piccode != null && piccode.equals(checkCode)){
+            //用户登录
+            User user = service.login(id, password);
 
-          }else if (user!=null && checkCode.equals("dhna")){
-            //会话属性中存储了当前登录的admin信息
-            session.setAttribute("user",user);
+            if (user!=null ){
+                //会话属性中存储了当前登录的admin信息
+                session.setAttribute("user",user);
 
-            //登录成功
-            request.getRequestDispatcher("main.jsp").forward(request,response);
+                //登录成功
+                request.getRequestDispatcher("main.jsp").forward(request,response);
 
-          }else if (user!=null && !checkCode.equals("dhna") && !checkCode.equals("p15z")){
-            //登录失败
-            request.setAttribute("msg","校验码错误，请重新输入");
-            request.getRequestDispatcher("login.jsp").forward(request,response);
+            }else {
+                //登录失败
+                request.setAttribute("msg","用户id与密码不匹配");
+                request.getRequestDispatcher("login.jsp").forward(request,response);
+            }
         }else {
             //登录失败
-            request.setAttribute("msg","用户id与密码不匹配");
+            request.setAttribute("msg","校验码错误，请重新输入");
             request.getRequestDispatcher("login.jsp").forward(request,response);
         }
     }
@@ -142,7 +144,7 @@ public class UserServlet extends BaseServlet {
 
     }
 
-    //分页查询,查询所有货物
+    //分页查询,查询所有用户
     public void viewAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //获取当前页码
         String page = request.getParameter("pageNow");

@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -24,6 +25,7 @@
             color:red;
         }
     </style>
+
 </head>
 
 <body>
@@ -38,16 +40,26 @@
                 <ul class="Add_Manager_style clearfix">
                     <li>
                         <label class="label_name">货物ID</label>
-                        <input name="id" type="text" placeholder="请输入货物id" class="text" value="${goodsOut.id}" style=" width:350px; "/>
+                        <select name="id" size="1" style="width:150px; margin-left:10px" id="id" oninput="viewName();viewNumber()">
+
+                    </select>
+                    </li>
+
+                    <li>
+                        <label class="label_name">货物名称</label>
+                        <input id="name" name="name" type="text" value="" class="text" readonly="readonly" style=" width:200px;"/>
                     </li>
                     <li>
                         <label class="label_name">出库数量</label>
-                        <input name="number" type="text" required="required" placeholder="请输入数量" value="${goodsOut.number}" class="text" style=" width:350px; "/>
+                        <input name="number" type="text" required="required" placeholder="请输入数量" value="${goodsOut.number}" class="text" style=" width:200px; "/>
+                        <%--<input  id="num" type="text" style=" width:120px;" value=""/>--%>
+                        <span>(当前库存量：<span id="num"></span>)</span>
                         <br/>
                         <span style="color: red;margin-left: 110px">${requestScope.msg}</span>
                     </li>
+
                     <li>
-                        <label class="label_name">客户</label>
+                        <label class="label_name">客 户</label>
                         <input name="custom" type="text" required="required" placeholder="请输入客户名称" value="${goodsOut.custom}" class="text" style=" width:350px; "/>
                     </li>
                     <li>
@@ -66,5 +78,36 @@
  </div>
 </div>
 </body>
+<script>
 
+    $.post("${pageContext.request.contextPath}/goodsOut?method=selectAllId",function (data) {
+        var d = data.data;
+        var tt="";
+        var tttt="";
+        var ttt="<option value='-1'>"+"--请选择货物id--"+"</option>";
+        $(d).each(function () {
+            tt += "<option value='"+this.id+"'>"+""+this.id+"</option>";
+            tttt = ttt+tt;
+            $('#id').html(tttt);
+        })
+    })
+
+    function viewName() {
+        var id = $("#id").val()
+        $.post("${pageContext.request.contextPath}/goodsOut?method=selectNameById&id="+id,function (data) {
+            var d = data.data;
+            $("#name").val(d);
+        })
+    }
+
+    function viewNumber() {
+        var id = $("#id").val()
+        console.log(id);
+        $.post("${pageContext.request.contextPath}/goodsOut?method=selectNumById&id="+id,function (data) {
+            var e = data.data;
+            $("#num").text(e);
+        })
+    }
+
+</script>
 </html>

@@ -66,11 +66,13 @@
                                     <label for="checkCode">验证码</label>
                                     <div class="row">
                                         <div class="col-xs-8">
-                                            <input type="password" class="form-control"
+                                            <input type="text" class="form-control"
                                                    id="checkCode" name="checkCode" placeholder="请输入验证码" />
                                         </div>
                                         <div class="col-xs-4" style="text-align: right;">
-                                            <img id="checkCodeImg" alt="checkCodeImg" src="vcode/1.png">
+                                            <a href="javascript:reloadCode();">
+                                                <img  style="width: 100px" id="imagecode" src="<%= request.getContextPath()%>/ImageServlet">
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -93,14 +95,11 @@
 </div>
 
 <script>
-    $(function() {
-        // 刷新图形验证码
-            $("#checkCodeImg").click(function() {
-                /* var timestamp = new Date().getTime();*/
-                //被AccountHandler类拦截
-                 $(this).attr("src", "vcode/2.png")
-              });
-    });
+
+    function reloadCode() {
+        var time = new Date().getTime();
+        document.getElementById("imagecode").src = "<%= request.getContextPath()%>/ImageServlet?d=" + time;
+    }
 
 </script>
 </body>

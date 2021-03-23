@@ -52,8 +52,8 @@
 						<p class="ordinary-output target-output" style="text-align: center;"><span style="color: rgb(38, 38, 38);"><strong><span style="font-size: 16px;"><br /></span></strong>
 							</span>
 						</p>
-						<p class="ordinary-output target-output" style="text-align: center;"><span style="color: rgb(127, 127, 127);"><span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;"><strong><span style="font-size: 24px;">WEB</span></strong>
-							</span><span style="font-family: &#39;times new roman&#39;;"><strong><span style="font-size: 24px;">只为更好的/<span style="font-size: 24px; font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;">THE SUSPENDER/BRACELET</span></span>
+						<p class="ordinary-output target-output" style="text-align: center;"><span style="color: rgb(127, 127, 127);"><span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;"><strong><span style="font-size: 24px;">WMS</span></strong>
+							</span><span style="font-family: &#39;times new roman&#39;;"><strong><span style="font-size: 24px;">只为更好的<span style="font-size: 24px; font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;">服务</span></span>
 							</strong>
 							</span>
 							</span><br /></p>
@@ -86,21 +86,21 @@
 											<a href="#" target="_blank" title="查看大图"><img src="./statics/images/1504752562802.jpg" /></a>
 										</p>
 										<p><br /></p>
-										<p>Nullam ornare, sem in malesuada sagittis, quam sapien ornare massa sem in ...</p>
+										<p>我们与多家大型货运公司携手合作，当出货量大且快运时，我们会用邮轮快速出货，保证在合理的时间范围内将货物送至客户手中，对客户我们一直保持着为其尽心竭诚服务的态度。</p>
 										<p><br /></p>
 									</td>
 									<td width="1" valign="top" style="word-break: break-all;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
 									<td style="word-break: break-all;" width="360" valign="top">
 										<p><img src="./statics/images/1504752571338.jpg" /></p>
 										<p><br /></p>
-										<p>Praesent sit amet erat sapien, auctor consectetur ligula. Lorem ipsum dolor auctor consect ...&nbsp;</p>
+										<p>我们拥有大型的现代化储物仓库，无论是大型物件还是小型货物我们都有良好的环境去放置，合理的存放物品使得我们货物进库和出库一直保持着高效性。</p>
 										<p><br /></p>
 									</td>
 									<td width="1" valign="top" style="word-break: break-all;">&nbsp; &nbsp;</td>
 									<td style="word-break: break-all;" width="360" valign="top">
 										<p><img src="./statics/images/1504752582409.jpg" /></p>
 										<p><br /></p>
-										<p>Phasellus enim libero, blandit vel are sapien vitae, condimentum ultricies et condimentum ...</p>
+										<p>当大型货物难以装卸时，我们会用机械化操作货物，无论是装货或是卸货还是调货，消除人力的局限性，全自动化的机械操作使得我们成为行业领先的有序的仓储公司。</p>
 										<p><br /></p>
 									</td>
 								</tr>
